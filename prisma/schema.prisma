@@ -3,6 +3,16 @@ generator client {
 }
 
 datasource db {
-  provider = "mongodb"
+  provider = "postgresql"
   url      = env("DATABASE_URL")
+}
+
+model Package {
+  id         Int      @id @default(autoincrement())
+  name       String
+  duration   String
+  cost       Float
+  activities String[]
+  img        String
+  location   String
 }
